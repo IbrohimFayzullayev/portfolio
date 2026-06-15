@@ -1,0 +1,40 @@
+---
+title: Amaliyotda SSG va ISR (App Router)
+description: Qachon statik generatsiya, qachon qayta validatsiya qilish va Next.js App Router'da keshlashni qanday tushunish kerak.
+locale: uz
+slug: nextjs-ssg-isr-amaliyot
+date: 2026-06-08
+tags: [nextjs, tezkorlik, rendering]
+featured: true
+---
+
+App Router rendering strategiyasini har bir route uchun alohida qaror qilib qo‘yadi.
+Asosiy mahorat — qaysi richagni va nima uchun tortishni bilishda.
+
+## Sukut bo‘yicha statik
+
+Dinamik ma’lumotsiz route build vaqtida statik generatsiya qilinadi. Kontent sayti
+uchun bu sahifalarning aksariyati. Statik parametrlarni aniq tanlaysiz:
+
+```tsx title="blog/[slug]/page.tsx"
+export function generateStaticParams() {
+  return getAllPosts().map((p) => ({ slug: p.slug }));
+}
+```
+
+## Incremental Static Regeneration
+
+Kontent CMS yoki API'da bo‘lsa, bitta tahrir uchun butun saytni qayta qurishni
+xohlamaysiz. `revalidate` sahifani belgilangan interval o‘tgach fonda qayta yaratadi.
+
+```tsx
+export const revalidate = 3600; // soniya
+```
+
+## Oddiy qaror qo‘llanmasi
+
+- Kontent build vaqtida ma’lum → **SSG**.
+- Kontent o‘zgaradi, lekin qisqa eskirishga toqat qiladi → `revalidate` bilan **ISR**.
+- Kontent har bir so‘rovga xos va shaxsiylashtirilgan → **dinamik** rendering.
+
+Ko‘pchilik bloglar va portfoliolar birinchi ikki toifada bemalol yashaydi.

@@ -1,0 +1,61 @@
+---
+title: Building a design system that scales
+description: How I approach design tokens, component APIs and theming so a UI can grow without collapsing under its own weight.
+locale: en
+slug: building-a-design-system
+date: 2026-05-28
+updated: 2026-06-02
+tags: [design-systems, css, react]
+featured: true
+---
+
+A design system is less about pretty components and more about **constraints that
+make the right thing the easy thing**. Here's the mental model I keep coming back to.
+
+## Start with tokens, not components
+
+Before a single button exists, define the primitives: color, spacing, radius,
+typography. Everything downstream references these, so a theme change is a token
+change — not a thousand edits.
+
+```css title="globals.css"
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --radius: 0.625rem;
+}
+```
+
+Using `oklch` gives perceptually uniform colors, which makes generating accessible
+dark variants far less painful.
+
+## Component APIs are contracts
+
+A good component API is small, predictable and hard to misuse. I lean on
+[`class-variance-authority`](https://cva.style) to express variants explicitly.
+
+```tsx title="button.tsx"
+const button = cva("inline-flex items-center", {
+  variants: {
+    variant: { default: "bg-primary", ghost: "hover:bg-accent" },
+    size: { sm: "h-8 px-3", lg: "h-11 px-6" },
+  },
+  defaultVariants: { variant: "default", size: "sm" },
+});
+```
+
+### Prefer composition over configuration
+
+When a component grows more than ~5 props, that's usually a signal it wants to be
+split. Composition keeps each piece focused.
+
+## Theming without the flash
+
+Resolve the theme before paint. `next-themes` writes a class to `<html>` early,
+and `suppressHydrationWarning` avoids the mismatch warning.
+
+## Takeaways
+
+- Tokens first, components second.
+- Keep component APIs small and explicit.
+- Treat dark mode as a first-class consumer of your tokens.

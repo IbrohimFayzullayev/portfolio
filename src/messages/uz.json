@@ -1,0 +1,69 @@
+{
+  "Metadata": {
+    "homeTitle": "Dasturchi va muallif",
+    "homeDescription": "Portfolio va muhandislik blogi — zamonaviy veb texnologiyalari bilan tez va sifatli mahsulotlar yarataman."
+  },
+  "Nav": {
+    "home": "Bosh sahifa",
+    "projects": "Loyihalar",
+    "blog": "Blog",
+    "about": "Men haqimda",
+    "toggleTheme": "Mavzuni almashtirish",
+    "switchLanguage": "Tilni almashtirish",
+    "openMenu": "Menyuni ochish",
+    "closeMenu": "Menyuni yopish"
+  },
+  "Home": {
+    "heroBadge": "Ish uchun ochiqman",
+    "heroTitle": "Men zamonaviy veb uchun tez va qulay mahsulotlar yarataman.",
+    "heroSubtitle": "Men TypeScript, React va Next.js’ga ixtisoslashgan dasturchiman. Tezkorlik, dizayn tizimlari va dasturchi tajribasiga alohida e’tibor beraman.",
+    "viewProjects": "Loyihalarni ko‘rish",
+    "readBlog": "Blogni o‘qish",
+    "featuredProjects": "Tanlangan loyihalar",
+    "featuredProjectsSubtitle": "Men dizayn qilib, ishga tushirgan ishlardan namunalar.",
+    "latestPosts": "So‘nggi yozuvlar",
+    "latestPostsSubtitle": "Muhandislik, dizayn va mahsulot yaratish haqida qaydlar.",
+    "viewAllProjects": "Barcha loyihalar",
+    "viewAllPosts": "Barcha yozuvlar"
+  },
+  "Projects": {
+    "title": "Loyihalar",
+    "subtitle": "Tanlangan ishlar — mahsulotlar, tajribalar va ochiq kod.",
+    "visitSite": "Saytga o‘tish",
+    "viewSource": "Manba kodi",
+    "stack": "Texnologiyalar",
+    "backToProjects": "Barcha loyihalar",
+    "empty": "Hozircha loyihalar yo‘q."
+  },
+  "Blog": {
+    "title": "Blog",
+    "subtitle": "Dasturiy ta’minot yaratish haqida batafsil qaydlar.",
+    "searchPlaceholder": "Yozuvlarni qidirish…",
+    "allTags": "Barchasi",
+    "minRead": "{minutes} daqiqa o‘qish",
+    "noResults": "Qidiruvga mos yozuv topilmadi.",
+    "backToBlog": "Barcha yozuvlar",
+    "updatedOn": "{date} da yangilandi",
+    "tableOfContents": "Ushbu sahifada",
+    "empty": "Hozircha yozuvlar yo‘q."
+  },
+  "About": {
+    "title": "Men haqimda",
+    "subtitle": "Men va ishlash uslubim haqida biroz batafsil.",
+    "p1": "Men noaniq muammolarni tushunarli, tez va qo‘llab-quvvatlanadigan mahsulotlarga aylantirishni yoqtiradigan dasturchiman. Ishlarimning aksariyati TypeScript va React ekotizimida bo‘lib, frontend platformaga — dizayn tizimlari, tezkorlik va qulaylikka alohida e’tibor qarataman.",
+    "p2": "Foydalanuvchi sezmaydigan, ammo doimo his qiladigan tafsilotlar men uchun muhim — bashorat qilinadigan o‘zaro ta’sir, tez yuklanish va hamma uchun ishlaydigan interfeyslar. Men kengayadigan tizimlarni qurishni yaxshi ko‘raman: aniq arxitektura, yaxshi standartlar va keyingi odam (ko‘pincha kelajakdagi men) tushunadigan kod.",
+    "stackTitle": "Foydalanadigan vositalarim",
+    "contactTitle": "Bog‘lanish",
+    "contactText": "Qiziqarli loyiha va hamkorliklarga ochiqman. Men bilan bog‘lanishning eng tez yo‘li — elektron pochta."
+  },
+  "Footer": {
+    "builtWith": "Next.js, Tailwind CSS va MDX yordamida qurilgan.",
+    "rights": "Barcha huquqlar himoyalangan.",
+    "rss": "RSS"
+  },
+  "NotFound": {
+    "title": "Sahifa topilmadi",
+    "description": "Siz qidirayotgan sahifa mavjud emas yoki ko‘chirilgan.",
+    "backHome": "Bosh sahifaga"
+  }
+}

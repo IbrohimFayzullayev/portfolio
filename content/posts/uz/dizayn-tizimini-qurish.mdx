@@ -1,0 +1,47 @@
+---
+title: Kengayadigan dizayn tizimini qurish
+description: Dizayn tokenlari, komponent API'lari va temaga qanday yondashganim — UI o‘z og‘irligi ostida qulamasdan o‘sishi uchun.
+locale: uz
+slug: dizayn-tizimini-qurish
+date: 2026-05-28
+updated: 2026-06-02
+tags: [dizayn-tizimlari, css, react]
+featured: true
+---
+
+Dizayn tizimi chiroyli komponentlardan ko‘ra ko‘proq **to‘g‘ri yo‘lni eng oson yo‘lga
+aylantiradigan cheklovlar** haqida. Men doimo qaytadigan fikr modeli quyidagicha.
+
+## Komponentdan emas, tokendan boshlang
+
+Birorta tugma paydo bo‘lishidan oldin primitivlarni aniqlang: rang, masofa, radius,
+tipografiya. Qolgan hamma narsa shularga murojaat qiladi — shuning uchun temani
+o‘zgartirish mingta tahrir emas, bitta token o‘zgarishi bo‘ladi.
+
+```css title="globals.css"
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --radius: 0.625rem;
+}
+```
+
+`oklch` perseptual jihatdan bir tekis ranglar beradi, bu esa qulay qorong‘i
+variantlarni yaratishni ancha osonlashtiradi.
+
+## Komponent API'lari — bu shartnoma
+
+Yaxshi komponent API'si kichik, bashorat qilinadigan va noto‘g‘ri ishlatish qiyin
+bo‘lgan bo‘ladi. Variantlarni aniq ifodalash uchun `class-variance-authority`'dan
+foydalanaman.
+
+### Sozlashdan ko‘ra kompozitsiya
+
+Komponent ~5 tadan ortiq propga ega bo‘lsa, bu odatda uni bo‘lish kerakligi
+signalidir. Kompozitsiya har bir qismni fokuslangan saqlaydi.
+
+## Xulosa
+
+- Avval tokenlar, keyin komponentlar.
+- Komponent API'larini kichik va aniq saqlang.
+- Qorong‘i rejimni tokenlaringizning birinchi darajali iste’molchisi sifatida ko‘ring.

@@ -1,0 +1,69 @@
+{
+  "Metadata": {
+    "homeTitle": "Software Engineer & Writer",
+    "homeDescription": "Portfolio and engineering blog — building thoughtful, performant products with modern web technology."
+  },
+  "Nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "about": "About",
+    "toggleTheme": "Toggle theme",
+    "switchLanguage": "Switch language",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Home": {
+    "heroBadge": "Available for work",
+    "heroTitle": "I build fast, accessible products for the modern web.",
+    "heroSubtitle": "I’m a software engineer focused on TypeScript, React and Next.js. I care about performance, design systems and developer experience.",
+    "viewProjects": "View projects",
+    "readBlog": "Read the blog",
+    "featuredProjects": "Featured projects",
+    "featuredProjectsSubtitle": "A selection of things I’ve designed and shipped.",
+    "latestPosts": "Latest writing",
+    "latestPostsSubtitle": "Notes on engineering, design and building products.",
+    "viewAllProjects": "All projects",
+    "viewAllPosts": "All posts"
+  },
+  "Projects": {
+    "title": "Projects",
+    "subtitle": "Selected work — products, experiments and open source.",
+    "visitSite": "Visit site",
+    "viewSource": "Source",
+    "stack": "Stack",
+    "backToProjects": "All projects",
+    "empty": "No projects yet."
+  },
+  "Blog": {
+    "title": "Blog",
+    "subtitle": "Long-form notes on building software.",
+    "searchPlaceholder": "Search posts…",
+    "allTags": "All",
+    "minRead": "{minutes} min read",
+    "noResults": "No posts match your search.",
+    "backToBlog": "All posts",
+    "updatedOn": "Updated {date}",
+    "tableOfContents": "On this page",
+    "empty": "No posts yet."
+  },
+  "About": {
+    "title": "About",
+    "subtitle": "A little more about me and how I work.",
+    "p1": "I’m a software engineer who enjoys turning ambiguous problems into clear, fast and maintainable products. Most of my work lives in the TypeScript and React ecosystem, with a strong focus on the frontend platform: design systems, performance and accessibility.",
+    "p2": "I care about the details that users never notice but always feel — predictable interactions, fast page loads, and interfaces that work for everyone. I like building systems that scale: clear architecture, good defaults, and code that the next person (often future me) can understand.",
+    "stackTitle": "Tools I reach for",
+    "contactTitle": "Get in touch",
+    "contactText": "I’m open to interesting projects and collaborations. The fastest way to reach me is email."
+  },
+  "Footer": {
+    "builtWith": "Built with Next.js, Tailwind CSS and MDX.",
+    "rights": "All rights reserved.",
+    "rss": "RSS"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you’re looking for doesn’t exist or has moved.",
+    "backHome": "Back home"
+  }
+}

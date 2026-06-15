@@ -1,0 +1,52 @@
+---
+title: SSG and ISR in practice with the App Router
+description: When to statically generate, when to revalidate, and how to reason about caching in the Next.js App Router.
+locale: en
+slug: nextjs-ssg-isr-in-practice
+date: 2026-06-08
+tags: [nextjs, performance, rendering]
+featured: true
+---
+
+The App Router makes rendering strategy a per-route decision. The trick is knowing
+which lever to pull and why.
+
+## Static by default
+
+A route with no dynamic data is statically generated at build time. For a content
+site, that's most pages. You opt into static params explicitly:
+
+```tsx title="blog/[slug]/page.tsx"
+export function generateStaticParams() {
+  return getAllPosts().map((p) => ({ slug: p.slug }));
+}
+```
+
+## Incremental Static Regeneration
+
+When content lives in a CMS or API, you don't want to rebuild the whole site for
+one edit. `revalidate` regenerates a page in the background after a set interval.
+
+```tsx
+export const revalidate = 3600; // seconds
+```
+
+The first request after the window serves the stale page, triggers a rebuild, and
+subsequent requests get the fresh one. Users never wait on a cold render.
+
+### dynamicParams
+
+Pair `generateStaticParams` with `dynamicParams` to decide what happens for slugs
+you didn't pre-render:
+
+```tsx
+export const dynamicParams = false; // 404 unknown slugs
+```
+
+## A simple decision guide
+
+- Content known at build time → **SSG**.
+- Content changes but tolerates short staleness → **ISR** with `revalidate`.
+- Content is per-request and personalized → **dynamic** rendering.
+
+Most blogs and portfolios live happily in the first two categories.

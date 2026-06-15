@@ -1,0 +1,43 @@
+---
+title: Shipping fast without breaking TypeScript
+description: Patterns for keeping a TypeScript codebase strict, ergonomic and fast to iterate on.
+locale: en
+slug: shipping-fast-with-typescript
+date: 2026-04-19
+tags: [typescript, dx]
+---
+
+Strict TypeScript and fast iteration aren't opposites — but you have to set the
+project up so the compiler works _for_ you.
+
+## Turn on the strict flags early
+
+```json title="tsconfig.json"
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true
+  }
+}
+```
+
+`noUncheckedIndexedAccess` catches an entire class of `undefined` bugs that strict
+mode alone misses.
+
+## Infer, don't annotate
+
+Let inference do the work. Annotate boundaries (function signatures, exported
+APIs) and let everything inside flow.
+
+## Model state with unions
+
+Discriminated unions make impossible states unrepresentable:
+
+```ts
+type Result<T> =
+  | { status: "loading" }
+  | { status: "error"; error: Error }
+  | { status: "success"; data: T };
+```
+
+The compiler then forces you to handle every case at the call site.
