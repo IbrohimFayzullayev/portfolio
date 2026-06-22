@@ -31,7 +31,7 @@ export default async function ProjectsPage(props: {
   const { locale } = await props.params;
   setRequestLocale(locale);
   const t = await getTranslations("Projects");
-  const projects = getAllProjects(locale);
+  const projects = await getAllProjects(locale);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">

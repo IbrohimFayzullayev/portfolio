@@ -15,7 +15,7 @@ function withAlternates(path: string) {
   return languages;
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPaths = ["/", "/projects", "/blog", "/about"];
 
   const staticEntries: MetadataRoute.Sitemap = staticPaths.map((path) => ({
@@ -26,23 +26,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     alternates: { languages: withAlternates(path) },
   }));
 
-  const postEntries: MetadataRoute.Sitemap = getAllPostsAllLocales().map(
-    (post) => ({
-      url: absoluteUrl(`/${post.locale}/blog/${post.slug}`),
-      lastModified: new Date(post.updated ?? post.date),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    }),
-  );
+  const [allPosts, allProjects] = await Promise.all([
+    getAllPostsAllLocales(),
+    getAllProjectsAllLocales(),
+  ]);
 
-  const projectEntries: MetadataRoute.Sitemap = getAllProjectsAllLocales().map(
-    (project) => ({
-      url: absoluteUrl(`/${project.locale}/projects/${project.slug}`),
-      lastModified: new Date(project.date),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    }),
-  );
+  const postEntries: MetadataRoute.Sitemap = allPosts.map((post) => ({
+    url: absoluteUrl(`/${post.locale}/blog/${post.slug}`),
+    lastModified: new Date(post.updated ?? post.date),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  const projectEntries: MetadataRoute.Sitemap = allProjects.map((project) => ({
+    url: absoluteUrl(`/${project.locale}/projects/${project.slug}`),
+    lastModified: new Date(project.date),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
 
   return [...staticEntries, ...postEntries, ...projectEntries];
 }

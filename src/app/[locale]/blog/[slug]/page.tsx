@@ -20,8 +20,8 @@ import { Button } from "@/components/ui/button";
 // but this keeps the pattern in place for when content moves to a CMS/API.
 export const revalidate = 3600;
 
-export function generateStaticParams() {
-  return getAllPostsAllLocales().map((p) => ({
+export async function generateStaticParams() {
+  return (await getAllPostsAllLocales()).map((p) => ({
     locale: p.locale,
     slug: p.slug,
   }));
@@ -31,7 +31,7 @@ export async function generateMetadata(props: {
   params: Promise<{ locale: Locale; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await props.params;
-  const post = getPostBySlug(locale, slug);
+  const post = await getPostBySlug(locale, slug);
   if (!post) return {};
   return buildMetadata({
     locale,
@@ -50,7 +50,7 @@ export default async function PostPage(props: {
 }) {
   const { locale, slug } = await props.params;
   setRequestLocale(locale);
-  const post = getPostBySlug(locale, slug);
+  const post = await getPostBySlug(locale, slug);
   if (!post) notFound();
 
   const t = await getTranslations("Blog");
@@ -120,7 +120,7 @@ export default async function PostPage(props: {
           </header>
 
           <Prose className="mt-10">
-            <MDXContent code={post.body} />
+            <MDXContent source={post.body} />
           </Prose>
         </article>
 

@@ -1,20 +1,18 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from "react";
-import * as runtime from "react/jsx-runtime";
 import NextImage from "next/image";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import rehypeSlug from "rehype-slug";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 import { Link } from "@/i18n/navigation";
 
 /**
- * Velite compiles MDX to a function body string. We turn it back into a
- * component at runtime. This runs on the server (RSC) by default.
+ * Renders raw MDX `body` coming from the API. Compilation happens on the
+ * server (RSC). The rehype plugins mirror the old Velite config so headings
+ * get ids/anchors and code blocks are highlighted with Shiki.
  */
-function useMDXComponent(code: string) {
-  const fn = new Function(code);
-  return fn({ ...runtime }).default as React.ComponentType<{
-    components?: Record<string, React.ComponentType<any>>;
-  }>;
-}
 
 const components: Record<string, React.ComponentType<any>> = {
   a: ({ href = "", ...props }: React.ComponentProps<"a">) => {
@@ -42,7 +40,25 @@ const components: Record<string, React.ComponentType<any>> = {
   ),
 };
 
-export function MDXContent({ code }: { code: string }) {
-  const Component = useMDXComponent(code);
-  return <Component components={components} />;
+const mdxOptions = {
+  mdxOptions: {
+    remarkPlugins: [],
+    rehypePlugins: [
+      rehypeSlug,
+      [
+        rehypePrettyCode,
+        {
+          theme: { dark: "github-dark", light: "github-light" },
+          keepBackground: false,
+        },
+      ],
+      [rehypeAutolinkHeadings, { behavior: "wrap" }],
+    ] as any,
+  },
+};
+
+export function MDXContent({ source }: { source: string }) {
+  return (
+    <MDXRemote source={source} components={components} options={mdxOptions} />
+  );
 }

@@ -1,21 +1,34 @@
 ---
 title: Portfolio Platform
-description: This very site — a bilingual, content-driven portfolio and blog built as a scalable foundation.
+description: This very site — a bilingual portfolio and blog backed by a Go API, a PostgreSQL database and an admin CMS.
 locale: en
 slug: portfolio-platform
 date: 2026-06-12
 order: 10
-featured: false
-tags: [open-source, frontend]
-stack: [Next.js, TypeScript, Tailwind v4, Velite, next-intl]
+featured: true
+tags: [full-stack, open-source]
+stack: [Next.js, TypeScript, Go, PostgreSQL, Tailwind v4, next-intl]
 repo: https://github.com/
 ---
 
-The site you're reading. Built as a long-lived foundation rather than a one-off,
-with a typed content layer, i18n and a custom design system.
+The site you're reading. It started as a static, MDX-driven portfolio and grew into
+a small full-stack system: a public website, an admin dashboard, and a Go API that
+both talk to the same PostgreSQL database.
 
-## Architecture
+## Three apps, one source of truth
 
-- **Content as data** via Velite — MDX compiled and type-checked at build time.
-- **i18n** with `next-intl` and locale-prefixed routing.
-- **SEO** baked in: dynamic OG images, RSS, sitemap and structured data.
+- **Public site** (Next.js) — reads published content from the API and renders MDX
+  on the server with `next-mdx-remote`, with locale-prefixed routing for English and
+  Uzbek.
+- **Admin dashboard** (Next.js) — a JWT-protected CMS for writing posts and projects,
+  built with React Query and optimistic updates.
+- **API** (Go + chi + pgx + sqlc) — type-safe SQL, embedded migrations that apply on
+  startup, and a clean split between authenticated write routes and public read routes.
+
+## Things I'm happy with
+
+- **Type safety end to end** — sqlc generates Go from SQL, and the front-end mirrors
+  the API's JSON shapes in TypeScript.
+- **ISR** keeps the public site fast: pages are cached and revalidated in the
+  background instead of rebuilding the whole site for one edit.
+- **SEO baked in** — dynamic OG images, RSS, a sitemap and structured data.

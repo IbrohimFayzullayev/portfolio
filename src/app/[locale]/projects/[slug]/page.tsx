@@ -16,8 +16,8 @@ import { Prose } from "@/components/prose";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-export function generateStaticParams() {
-  return getAllProjectsAllLocales().map((p) => ({
+export async function generateStaticParams() {
+  return (await getAllProjectsAllLocales()).map((p) => ({
     locale: p.locale,
     slug: p.slug,
   }));
@@ -27,7 +27,7 @@ export async function generateMetadata(props: {
   params: Promise<{ locale: Locale; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await props.params;
-  const project = getProjectBySlug(locale, slug);
+  const project = await getProjectBySlug(locale, slug);
   if (!project) return {};
   return buildMetadata({
     locale,
@@ -45,7 +45,7 @@ export default async function ProjectPage(props: {
 }) {
   const { locale, slug } = await props.params;
   setRequestLocale(locale);
-  const project = getProjectBySlug(locale, slug);
+  const project = await getProjectBySlug(locale, slug);
   if (!project) notFound();
 
   const t = await getTranslations("Projects");
@@ -105,7 +105,7 @@ export default async function ProjectPage(props: {
       </header>
 
       <Prose className="mt-10">
-        <MDXContent code={project.body} />
+        <MDXContent source={project.body} />
       </Prose>
     </article>
   );

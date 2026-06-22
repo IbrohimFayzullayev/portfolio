@@ -31,8 +31,10 @@ export default async function BlogPage(props: {
   const { locale } = await props.params;
   setRequestLocale(locale);
   const t = await getTranslations("Blog");
-  const posts = getAllPosts(locale);
-  const tags = getAllTags(locale);
+  const posts = await getAllPosts(locale);
+  const tags = await getAllTags(locale);
+
+  console.log(posts);
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
@@ -40,7 +42,7 @@ export default async function BlogPage(props: {
 
       <div className="mt-10">
         {posts.length === 0 ? (
-          <p className="text-sm text-muted-foreground">{t("empty")}</p>
+          <p className="text-muted-foreground text-sm">{t("empty")}</p>
         ) : (
           <BlogSearch posts={posts} tags={tags} locale={locale} />
         )}

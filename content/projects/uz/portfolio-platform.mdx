@@ -1,0 +1,34 @@
+---
+title: Portfolio Platforma
+description: Aynan shu sayt — Go API, PostgreSQL bazasi va admin CMS bilan quvvatlangan ikki tilli portfolio va blog.
+locale: uz
+slug: portfolio-platforma
+date: 2026-06-12
+order: 10
+featured: true
+tags: [full-stack, ochiq-kod]
+stack: [Next.js, TypeScript, Go, PostgreSQL, Tailwind v4, next-intl]
+repo: https://github.com/
+---
+
+Siz o‘qiyotgan sayt. U statik, MDX asosidagi portfolio sifatida boshlandi va kichik
+full-stack tizimga aylandi: public sayt, admin panel va ikkalasini bitta PostgreSQL
+bazasiga ulaydigan Go API.
+
+## Uchta ilova, bitta haqiqat manbasi
+
+- **Public sayt** (Next.js) — chop etilgan kontentni API'dan o‘qiydi va MDX'ni server
+  tomonda `next-mdx-remote` bilan render qiladi; ingliz va o‘zbek tillari uchun til
+  prefiksli routing.
+- **Admin panel** (Next.js) — post va loyihalarni yozish uchun JWT bilan himoyalangan
+  CMS; React Query va optimistik yangilanishlar bilan qurilgan.
+- **API** (Go + chi + pgx + sqlc) — type-safe SQL, startup'da qo‘llanadigan o‘rnatilgan
+  migratsiyalar va himoyalangan yozuv hamda ochiq o‘qish route'larining toza ajratilishi.
+
+## Men mamnun bo‘lgan jihatlar
+
+- **Boshdan-oxir tip xavfsizligi** — sqlc SQL'dan Go kodi yaratadi, front-end esa
+  API'ning JSON shakllarini TypeScript'da aks ettiradi.
+- **ISR** public saytni tez saqlaydi: sahifalar keshlanadi va fonda qayta yangilanadi,
+  bitta tahrir uchun butun sayt qayta qurilmaydi.
+- **SEO ichki o‘rnatilgan** — dinamik OG rasmlar, RSS, sitemap va tuzilgan ma’lumotlar.

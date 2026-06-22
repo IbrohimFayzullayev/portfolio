@@ -20,11 +20,11 @@ export default async function HomePage(props: {
   setRequestLocale(locale);
   const t = await getTranslations("Home");
 
-  let featuredProjects = getFeaturedProjects(locale, 3);
+  let featuredProjects = await getFeaturedProjects(locale, 3);
   if (featuredProjects.length === 0) {
-    featuredProjects = getAllProjects(locale).slice(0, 3);
+    featuredProjects = (await getAllProjects(locale)).slice(0, 3);
   }
-  const latestPosts = getAllPosts(locale).slice(0, 3);
+  const latestPosts = (await getAllPosts(locale)).slice(0, 3);
 
   return (
     <div className="mx-auto max-w-5xl px-4 sm:px-6">

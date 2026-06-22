@@ -1,0 +1,53 @@
+---
+title: TypeScript'ni buzmasdan tez yetkazib berish
+description: TypeScript kodbazasini qat'iy, qulay va tez iteratsiya qilinadigan saqlash patternlari.
+locale: uz
+slug: typescript-bilan-tez-yetkazish
+date: 2026-04-19
+tags: [typescript, dx]
+---
+
+Qat'iy TypeScript va tez iteratsiya bir-biriga zid emas — lekin loyihani shunday
+sozlash kerakki, kompilyator siz _uchun_ ishlasin, sizga qarshi emas.
+
+## Qat'iy flaglarni erta yoqing
+
+```json title="tsconfig.json"
+{
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true
+  }
+}
+```
+
+`noUncheckedIndexedAccess` faqat `strict` rejimi o‘tkazib yuboradigan butun bir
+sinf `undefined` xatolarini ushlaydi. Masalan, massiv elementiga indeks orqali
+murojaat qilganda uning `undefined` bo‘lishi mumkinligini majburan tekshirtiradi.
+
+## Annotatsiya emas, inferensiya
+
+Inferensiyaga ish bajaring. Faqat chegaralarni — funksiya imzolari va eksport
+qilingan API'larni — annotatsiya qiling, ichkaridagi hamma narsa o‘zi oqib o‘tsin.
+Bu kodni ham qisqaroq, ham refaktoringga chidamliroq qiladi.
+
+## Holatni union bilan modellashtiring
+
+Diskriminatsiyalangan union'lar imkonsiz holatlarni ifodalab bo‘lmaydigan qiladi:
+
+```ts
+type Result<T> =
+  | { status: "loading" }
+  | { status: "error"; error: Error }
+  | { status: "success"; data: T };
+```
+
+Shundan keyin kompilyator sizni chaqiruv joyida har bir holatni qayta ishlashga
+majbur qiladi — "ma'lumot bor, lekin yuklanyapti" kabi mantiqiy ziddiyatlar
+umuman paydo bo‘lmaydi.
+
+## Xulosa
+
+- Qat'iy flaglarni loyiha boshida yoqing, keyin emas.
+- Chegaralarni annotatsiya qiling, qolganini inferensiyaga qoldiring.
+- Holatni union'lar bilan modellashtirib, imkonsiz holatlarni yo‘q qiling.

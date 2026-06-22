@@ -21,7 +21,7 @@ export async function GET() {
     },
   });
 
-  const posts = getAllPostsAllLocales().sort(
+  const posts = (await getAllPostsAllLocales()).sort(
     (a, b) => +new Date(b.date) - +new Date(a.date),
   );
 
