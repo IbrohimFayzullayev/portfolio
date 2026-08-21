@@ -37,3 +37,7 @@ next-env.d.ts
 .vscode/*
 !.vscode/extensions.json
 .idea
+
+# vitest scratch
+vitest.config.ts.timestamp-*
+coverage/
