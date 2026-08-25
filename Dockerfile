@@ -23,7 +23,7 @@ ARG NEXT_PUBLIC_SITE_URL=https://example.com
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL \
     NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL \
     NEXT_TELEMETRY_DISABLED=1
-RUN pnpm build
+RUN mkdir -p public && pnpm build
 
 # ---- runtime ----
 FROM base AS runner
