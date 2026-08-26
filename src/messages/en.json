@@ -52,12 +52,15 @@
     "subtitle": "A little more about me and how I work.",
     "p1": "I’m a software engineer who enjoys turning ambiguous problems into clear, fast and maintainable products. Most of my work lives in the TypeScript and React ecosystem, with a strong focus on the frontend platform: design systems, performance and accessibility.",
     "p2": "I care about the details that users never notice but always feel — predictable interactions, fast page loads, and interfaces that work for everyone. I like building systems that scale: clear architecture, good defaults, and code that the next person (often future me) can understand.",
-    "stackTitle": "Tools I reach for",
+    "stackTitle": "How I work across the stack",
     "contactTitle": "Get in touch",
-    "contactText": "I’m open to interesting projects and collaborations. The fastest way to reach me is email."
+    "contactText": "I'm open to interesting projects and collaborations. Email, Telegram or a call — whichever suits you.",
+    "stackFrontend": "Frontend",
+    "stackBackend": "Backend",
+    "stackInfra": "Infrastructure"
   },
   "Footer": {
-    "builtWith": "Built with Next.js, Tailwind CSS and MDX.",
+    "builtWith": "Next.js and Go, self-hosted on a VPS with Docker and Caddy.",
     "rights": "All rights reserved.",
     "rss": "RSS"
   },

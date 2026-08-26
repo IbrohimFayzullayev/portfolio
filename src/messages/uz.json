@@ -52,12 +52,15 @@
     "subtitle": "Men va ishlash uslubim haqida biroz batafsil.",
     "p1": "Men noaniq muammolarni tushunarli, tez va qo‘llab-quvvatlanadigan mahsulotlarga aylantirishni yoqtiradigan dasturchiman. Ishlarimning aksariyati TypeScript va React ekotizimida bo‘lib, frontend platformaga — dizayn tizimlari, tezkorlik va qulaylikka alohida e’tibor qarataman.",
     "p2": "Foydalanuvchi sezmaydigan, ammo doimo his qiladigan tafsilotlar men uchun muhim — bashorat qilinadigan o‘zaro ta’sir, tez yuklanish va hamma uchun ishlaydigan interfeyslar. Men kengayadigan tizimlarni qurishni yaxshi ko‘raman: aniq arxitektura, yaxshi standartlar va keyingi odam (ko‘pincha kelajakdagi men) tushunadigan kod.",
-    "stackTitle": "Foydalanadigan vositalarim",
+    "stackTitle": "Stack bo‘ylab qanday ishlayman",
     "contactTitle": "Bog‘lanish",
-    "contactText": "Qiziqarli loyiha va hamkorliklarga ochiqman. Men bilan bog‘lanishning eng tez yo‘li — elektron pochta."
+    "contactText": "Qiziqarli loyiha va hamkorliklarga ochiqman. Pochta, Telegram yoki telefon — sizga qulayi orqali bog‘lanavering.",
+    "stackFrontend": "Frontend",
+    "stackBackend": "Backend",
+    "stackInfra": "Infratuzilma"
   },
   "Footer": {
-    "builtWith": "Next.js, Tailwind CSS va MDX yordamida qurilgan.",
+    "builtWith": "Next.js va Go — Docker va Caddy bilan o‘z serverimda joylashtirilgan.",
     "rights": "Barcha huquqlar himoyalangan.",
     "rss": "RSS"
   },

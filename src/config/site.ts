@@ -11,8 +11,12 @@ export const siteConfig = {
   ),
   author: {
     name: "Ibrohim",
-    email: "ibrohimcoder22@gmail.com",
-    twitter: "@ibrohim",
+    email: "ibrokhim.fayzullaev.dev@gmail.com",
+    telegram: "https://t.me/Ibrohim_Fayzullayev",
+    telegramHandle: "@Ibrohim_Fayzullayev",
+    // tel: link uchun raqamlarsiz format, ko'rsatish uchun o'qiladigan format
+    phone: "+998992550337",
+    phoneDisplay: "+998 99 255 03 37",
     github: "https://github.com/IbrohimFayzullayev",
     linkedin: "https://www.linkedin.com/in/ibrohim-fayzullayev/",
   },

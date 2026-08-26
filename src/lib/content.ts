@@ -11,8 +11,11 @@ import type { Locale } from "@/i18n/routing";
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8080/api/v1";
 
-// ISR window: re-fetch from the API at most once per hour per route.
-const REVALIDATE = 3600;
+// ISR window: re-fetch from the API at most once per minute per route.
+// Was 3600 (1h), which meant content published in the dashboard could stay
+// invisible for an hour. The API is on the internal Docker network, so a
+// refetch is cheap.
+const REVALIDATE = 60;
 
 export type TocEntry = { title: string; url: string; depth: number };
 

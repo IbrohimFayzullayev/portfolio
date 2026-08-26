@@ -34,8 +34,6 @@ export default async function BlogPage(props: {
   const posts = await getAllPosts(locale);
   const tags = await getAllTags(locale);
 
-  console.log(posts);
-
   return (
     <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
       <PageHeader title={t("title")} subtitle={t("subtitle")} />

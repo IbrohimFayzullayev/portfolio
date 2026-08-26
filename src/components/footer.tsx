@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Github, Linkedin, Mail, Rss } from "lucide-react";
+import { Github, Linkedin, Mail, Rss, Send } from "lucide-react";
 
 import { siteConfig } from "@/config/site";
 
@@ -34,6 +34,15 @@ export function Footer() {
             className="transition-colors hover:text-foreground"
           >
             <Linkedin className="size-5" />
+          </a>
+          <a
+            href={siteConfig.author.telegram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Telegram"
+            className="transition-colors hover:text-foreground"
+          >
+            <Send className="size-5" />
           </a>
           <a
             href={`mailto:${siteConfig.author.email}`}

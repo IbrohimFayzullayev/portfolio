@@ -77,7 +77,6 @@ export function buildMetadata({
       title: computedTitle,
       description,
       images: [ogImage],
-      creator: siteConfig.author.twitter,
     },
   };
 }

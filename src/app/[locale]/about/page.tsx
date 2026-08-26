@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail } from "lucide-react";
+import { Mail, Phone, Send } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import type { Locale } from "@/i18n/routing";
@@ -10,16 +10,21 @@ import { PageHeader } from "@/components/page-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-const stack = [
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Tailwind CSS",
-  "Node.js",
-  "PostgreSQL",
-  "MDX",
-  "Vercel",
-];
+// Guruhlangan — tekis ro'yxat full-stack ekanini ko'rsatmaydi.
+const stackGroups = [
+  {
+    key: "stackFrontend",
+    items: ["TypeScript", "React", "Next.js", "Tailwind CSS", "next-intl"],
+  },
+  {
+    key: "stackBackend",
+    items: ["Go", "PostgreSQL", "sqlc", "REST API", "JWT auth"],
+  },
+  {
+    key: "stackInfra",
+    items: ["Docker", "Caddy", "GitHub Actions", "GHCR", "Linux VPS"],
+  },
+] as const;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -58,11 +63,20 @@ export default async function AboutPage(props: {
         <h2 className="text-lg font-semibold tracking-tight">
           {t("stackTitle")}
         </h2>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {stack.map((item) => (
-            <Badge key={item} variant="secondary">
-              {item}
-            </Badge>
+        <div className="mt-5 space-y-5">
+          {stackGroups.map((group) => (
+            <div key={group.key}>
+              <h3 className="text-muted-foreground font-mono text-xs uppercase tracking-widest">
+                {t(group.key)}
+              </h3>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <Badge key={item} variant="secondary">
+                    {item}
+                  </Badge>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -72,12 +86,30 @@ export default async function AboutPage(props: {
           {t("contactTitle")}
         </h2>
         <p className="text-muted-foreground mt-3">{t("contactText")}</p>
-        <Button asChild className="mt-4">
-          <a href={`mailto:${siteConfig.author.email}`}>
-            <Mail className="size-4" />
-            {siteConfig.author.email}
-          </a>
-        </Button>
+        <div className="mt-4 flex flex-wrap gap-3">
+          <Button asChild>
+            <a href={`mailto:${siteConfig.author.email}`}>
+              <Mail className="size-4" />
+              {siteConfig.author.email}
+            </a>
+          </Button>
+          <Button asChild variant="outline">
+            <a
+              href={siteConfig.author.telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Send className="size-4" />
+              {siteConfig.author.telegramHandle}
+            </a>
+          </Button>
+          <Button asChild variant="outline">
+            <a href={`tel:${siteConfig.author.phone}`}>
+              <Phone className="size-4" />
+              {siteConfig.author.phoneDisplay}
+            </a>
+          </Button>
+        </div>
       </section>
     </div>
   );
