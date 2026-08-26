@@ -32,7 +32,6 @@ export function LocaleSwitcher() {
 
   function switchTo(locale: Locale) {
     setOpen(false);
-    // `params` preserves dynamic segments such as [slug].
     router.replace(
       // @ts-expect-error -- pathname + params is valid for next-intl navigation
       { pathname, params },
@@ -55,7 +54,7 @@ export function LocaleSwitcher() {
       {open && (
         <ul
           role="menu"
-          className="absolute right-0 z-50 mt-2 min-w-36 overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md"
+          className="bg-popover text-popover-foreground absolute right-0 z-50 mt-2 min-w-36 overflow-hidden rounded-md border p-1 shadow-md"
         >
           {locales.map((locale) => (
             <li key={locale} role="none">
@@ -64,7 +63,7 @@ export function LocaleSwitcher() {
                 aria-checked={locale === activeLocale}
                 onClick={() => switchTo(locale)}
                 className={cn(
-                  "flex w-full items-center rounded-sm px-2.5 py-1.5 text-sm transition-colors hover:bg-accent hover:text-accent-foreground",
+                  "hover:bg-accent hover:text-accent-foreground flex w-full items-center rounded-sm px-2.5 py-1.5 text-sm transition-colors",
                   locale === activeLocale && "font-medium",
                 )}
               >
