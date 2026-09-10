@@ -92,6 +92,20 @@ jobs:
             docker compose -f docker-compose.prod.yml --env-file .env pull web
             docker compose -f docker-compose.prod.yml --env-file .env up -d web
 
+            # A 200 from the site proves SOMETHING is answering, not that it is
+            # the new build — the previous container answers 200 just as well.
+            # Compare the running container's image id with the one we just
+            # pulled, so a deploy that quietly kept the old image fails here
+            # instead of being reported green.
+            want=$(docker image inspect "$REGISTRY/portfolio:$TAG" --format '{{.Id}}')
+            got=$(docker inspect "$(docker compose -f docker-compose.prod.yml ps -q web)" --format '{{.Image}}')
+            if [ "$want" != "$got" ]; then
+              echo "FAILED: web is still running $got, expected $want"
+              docker compose -f docker-compose.prod.yml ps web
+              exit 1
+            fi
+            echo "image ok: web -> $TAG"
+
             for i in $(seq 1 20); do
               if curl -fsS -o /dev/null "https://$PUBLIC_DOMAIN"; then
                 echo "healthy: $PUBLIC_DOMAIN"
