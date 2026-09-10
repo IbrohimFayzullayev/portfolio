@@ -51,7 +51,7 @@ describe("getAllPosts", () => {
     fetchMock.mockResolvedValueOnce(jsonResponse([postRow]));
     await getAllPosts("en");
     expect(fetchMock).toHaveBeenCalledOnce();
-    expect(fetchMock.mock.calls[0][0]).toContain("/public/posts?locale=en");
+    expect(fetchMock.mock.calls[0]![0]).toContain("/public/posts?locale=en");
   });
 
   it("maps rows into Post objects with derived metadata", async () => {
@@ -59,7 +59,7 @@ describe("getAllPosts", () => {
     const posts = await getAllPosts("en");
 
     expect(posts).toHaveLength(1);
-    const p = posts[0];
+    const p = posts[0]!;
     expect(p.title).toBe("Hello World");
     expect(p.tags).toEqual(["go", "next"]);
     expect(p.metadata.readingTime).toBeGreaterThanOrEqual(1);
@@ -77,7 +77,7 @@ describe("getAllPosts", () => {
       jsonResponse([{ ...postRow, tags: null }]),
     );
     const posts = await getAllPosts("en");
-    expect(posts[0].tags).toEqual([]);
+    expect(posts[0]!.tags).toEqual([]);
   });
 
   it("returns [] when the API responds with an error status", async () => {
@@ -136,6 +136,7 @@ describe("getAllProjects", () => {
     };
     fetchMock.mockResolvedValueOnce(jsonResponse([projectRow]));
     const [proj] = await getAllProjects("en");
+    if (!proj) throw new Error("expected one project");
     expect(proj.stack).toEqual([]);
     expect(proj.url).toBeUndefined(); // empty string -> undefined
     expect(proj.repo).toBe("https://github.com/x/y");

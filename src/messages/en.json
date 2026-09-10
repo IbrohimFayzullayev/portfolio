@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "homeTitle": "Software Engineer & Writer",
-    "homeDescription": "Portfolio and engineering blog — building thoughtful, performant products with modern web technology."
+    "homeTitle": "Full-stack Engineer",
+    "homeDescription": "Portfolio and engineering blog — from interface to server: TypeScript, Next.js, Go, PostgreSQL, Docker."
   },
   "Nav": {
     "home": "Home",
@@ -15,8 +15,8 @@
   },
   "Home": {
     "heroBadge": "Available for work",
-    "heroTitle": "I build fast, accessible products for the modern web.",
-    "heroSubtitle": "I’m a software engineer focused on TypeScript, React and Next.js. I care about performance, design systems and developer experience.",
+    "heroTitle": "I build the whole product — interface, API and the server it runs on.",
+    "heroSubtitle": "Full-stack engineer. TypeScript and Next.js on the front, Go and PostgreSQL behind it, Docker and GitHub Actions to ship it. This site is one of those builds: three services on a VPS I run myself.",
     "viewProjects": "View projects",
     "readBlog": "Read the blog",
     "featuredProjects": "Featured projects",
@@ -50,8 +50,8 @@
   "About": {
     "title": "About",
     "subtitle": "A little more about me and how I work.",
-    "p1": "I’m a software engineer who enjoys turning ambiguous problems into clear, fast and maintainable products. Most of my work lives in the TypeScript and React ecosystem, with a strong focus on the frontend platform: design systems, performance and accessibility.",
-    "p2": "I care about the details that users never notice but always feel — predictable interactions, fast page loads, and interfaces that work for everyone. I like building systems that scale: clear architecture, good defaults, and code that the next person (often future me) can understand.",
+    "p1": "I build whole products — from the interface down to the database schema and the server that runs it. In practice that means a Next.js front end, a REST API in Go, schema and migrations in PostgreSQL, and the whole thing shipped as Docker containers through GitHub Actions.",
+    "p2": "This site is one of those builds: three services — the public site, an admin CMS and the Go API — running behind Caddy on a single VPS, redeployed on every push. I care about the details a visitor never notices but always feels: fast loads, predictable behaviour, and code the next person — usually future me — can follow.",
     "stackTitle": "How I work across the stack",
     "contactTitle": "Get in touch",
     "contactText": "I'm open to interesting projects and collaborations. Email, Telegram or a call — whichever suits you.",
