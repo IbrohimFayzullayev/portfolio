@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
-import { getAllPostsAllLocales, getPostBySlug } from "@/lib/content";
-import { siteConfig, absoluteUrl } from "@/config/site";
+import {
+  getAllPostsAllLocales,
+  getPostBySlug,
+  getTranslationPaths,
+} from "@/lib/content";
+import { absoluteUrl } from "@/config/site";
 import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/json-ld";
+import { breadcrumbJsonLd } from "@/lib/jsonld";
 import { formatDate } from "@/lib/utils";
 import { MDXContent } from "@/components/mdx-content";
 import { Prose } from "@/components/prose";
@@ -16,9 +21,10 @@ import { TableOfContents } from "@/components/table-of-contents";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-// Revalidate static pages every hour (ISR). Local MDX rebuilds at deploy time,
-// but this keeps the pattern in place for when content moves to a CMS/API.
-export const revalidate = 3600;
+// Content comes from the API, so an hour was too long: a post edited in the
+// dashboard stayed stale until the window elapsed. Matches REVALIDATE in
+// lib/content.ts — the API is on the internal network, a refetch is cheap.
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   return (await getAllPostsAllLocales()).map((p) => ({
@@ -36,6 +42,7 @@ export async function generateMetadata(props: {
   return buildMetadata({
     locale,
     path: `/blog/${slug}`,
+    paths: await getTranslationPaths("blog", post.translationKey),
     title: post.title,
     description: post.description,
     type: "article",
@@ -63,19 +70,21 @@ export default async function PostPage(props: {
     datePublished: post.date,
     dateModified: post.updated ?? post.date,
     inLanguage: locale,
-    author: { "@type": "Person", name: siteConfig.author.name },
-    publisher: { "@type": "Person", name: siteConfig.author.name },
+    author: { "@id": absoluteUrl("/#person") },
+    publisher: { "@id": absoluteUrl("/#person") },
     mainEntityOfPage: absoluteUrl(`/${locale}/blog/${slug}`),
     keywords: post.tags.join(", "),
   };
 
+  const breadcrumb = breadcrumbJsonLd(locale, [
+    { name: t("title"), path: "/blog" },
+    { name: post.title, path: `/blog/${slug}` },
+  ]);
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-      <Script
-        id="post-jsonld"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd id="post-jsonld" data={jsonLd} />
+      <JsonLd id="post-breadcrumb-jsonld" data={breadcrumb} />
 
       <Button asChild variant="ghost" size="sm" className="mb-8 -ml-2">
         <Link href="/blog">

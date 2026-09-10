@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "homeTitle": "Dasturchi va muallif",
-    "homeDescription": "Portfolio va muhandislik blogi — zamonaviy veb texnologiyalari bilan tez va sifatli mahsulotlar yarataman."
+    "homeTitle": "Full-stack dasturchi",
+    "homeDescription": "Portfolio va muhandislik blogi — interfeysdan serverga qadar: TypeScript, Next.js, Go, PostgreSQL, Docker."
   },
   "Nav": {
     "home": "Bosh sahifa",
@@ -15,8 +15,8 @@
   },
   "Home": {
     "heroBadge": "Ish uchun ochiqman",
-    "heroTitle": "Men zamonaviy veb uchun tez va qulay mahsulotlar yarataman.",
-    "heroSubtitle": "Men TypeScript, React va Next.js’ga ixtisoslashgan dasturchiman. Tezkorlik, dizayn tizimlari va dasturchi tajribasiga alohida e’tibor beraman.",
+    "heroTitle": "Men mahsulotni interfeysdan serverga qadar quraman.",
+    "heroSubtitle": "Full-stack dasturchiman: old tomonda TypeScript va Next.js, orqasida Go va PostgreSQL, chiqarish uchun Docker va GitHub Actions. Shu saytning o‘zi ham shunday qurilgan — uchta servis, o‘z serverimda.",
     "viewProjects": "Loyihalarni ko‘rish",
     "readBlog": "Blogni o‘qish",
     "featuredProjects": "Tanlangan loyihalar",
@@ -50,8 +50,8 @@
   "About": {
     "title": "Men haqimda",
     "subtitle": "Men va ishlash uslubim haqida biroz batafsil.",
-    "p1": "Men noaniq muammolarni tushunarli, tez va qo‘llab-quvvatlanadigan mahsulotlarga aylantirishni yoqtiradigan dasturchiman. Ishlarimning aksariyati TypeScript va React ekotizimida bo‘lib, frontend platformaga — dizayn tizimlari, tezkorlik va qulaylikka alohida e’tibor qarataman.",
-    "p2": "Foydalanuvchi sezmaydigan, ammo doimo his qiladigan tafsilotlar men uchun muhim — bashorat qilinadigan o‘zaro ta’sir, tez yuklanish va hamma uchun ishlaydigan interfeyslar. Men kengayadigan tizimlarni qurishni yaxshi ko‘raman: aniq arxitektura, yaxshi standartlar va keyingi odam (ko‘pincha kelajakdagi men) tushunadigan kod.",
+    "p1": "Men to‘liq mahsulot quradigan dasturchiman — interfeysdan ma’lumotlar bazasi sxemasigacha va uni ishga tushiradigan serverga qadar. Amalda bu shuni anglatadi: Next.js’da interfeys, Go’da REST API, PostgreSQL’da sxema va migratsiyalar, hammasi Docker konteynerlarida GitHub Actions orqali chiqadi.",
+    "p2": "Shu saytning o‘zi ana shunga misol: uchta servis — ommaviy sayt, admin CMS va Go API — bitta VPS’da Caddy orqasida ishlaydi va har push’da avtomatik yangilanadi. Foydalanuvchi sezmaydigan, ammo doimo his qiladigan tafsilotlar men uchun muhim: tez yuklanish, bashorat qilinadigan xatti-harakat va keyingi odam — ko‘pincha kelajakdagi men — tushunadigan kod.",
     "stackTitle": "Stack bo‘ylab qanday ishlayman",
     "contactTitle": "Bog‘lanish",
     "contactText": "Qiziqarli loyiha va hamkorliklarga ochiqman. Pochta, Telegram yoki telefon — sizga qulayi orqali bog‘lanavering.",

@@ -22,6 +22,8 @@ export type TocEntry = { title: string; url: string; depth: number };
 export interface Post {
   locale: Locale;
   slug: string;
+  /** Links this post to its counterpart in the other locale ("" = none). */
+  translationKey: string;
   title: string;
   description: string;
   body: string; // raw MDX
@@ -38,6 +40,8 @@ export interface Post {
 export interface Project {
   locale: Locale;
   slug: string;
+  /** See Post.translationKey. */
+  translationKey: string;
   title: string;
   description: string;
   body: string;
@@ -55,6 +59,7 @@ export interface Project {
 interface PostRow {
   locale: string;
   slug: string;
+  translation_key?: string;
   title: string;
   description: string;
   body: string;
@@ -67,6 +72,7 @@ interface PostRow {
 interface ProjectRow {
   locale: string;
   slug: string;
+  translation_key?: string;
   title: string;
   description: string;
   body: string;
@@ -104,6 +110,7 @@ function toPost(row: PostRow): Post {
   return {
     locale: row.locale as Locale,
     slug: row.slug,
+    translationKey: row.translation_key ?? "",
     title: row.title,
     description: row.description,
     body: row.body,
@@ -121,6 +128,7 @@ function toProject(row: ProjectRow): Project {
   return {
     locale: row.locale as Locale,
     slug: row.slug,
+    translationKey: row.translation_key ?? "",
     title: row.title,
     description: row.description,
     body: row.body,
@@ -192,6 +200,41 @@ export async function getProjectBySlug(
 export async function getAllProjectsAllLocales(): Promise<Project[]> {
   const rows = await apiGet<ProjectRow[]>(`/public/projects`);
   return (rows ?? []).map(toProject);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                            Translation siblings                            */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Locale-agnostic paths for every language version of one piece of content.
+ *
+ * hreflang used to claim that /uz/blog/<slug> and /en/blog/<slug> were the same
+ * article — true only when the two slugs happen to match, which for real
+ * bilingual writing they never do. `translationKey` is what actually pairs
+ * them; this resolves the key into the paths `buildMetadata` needs.
+ *
+ * Returns `{}` for content with no counterpart, which is the honest answer: the
+ * page then advertises only its own locale.
+ */
+export async function getTranslationPaths(
+  kind: "blog" | "projects",
+  translationKey: string,
+): Promise<Partial<Record<Locale, string>>> {
+  if (!translationKey) return {};
+
+  const items =
+    kind === "blog"
+      ? await getAllPostsAllLocales()
+      : await getAllProjectsAllLocales();
+
+  const paths: Partial<Record<Locale, string>> = {};
+  for (const item of items) {
+    if (item.translationKey === translationKey) {
+      paths[item.locale] = `/${kind}/${item.slug}`;
+    }
+  }
+  return paths;
 }
 
 /* -------------------------------------------------------------------------- */

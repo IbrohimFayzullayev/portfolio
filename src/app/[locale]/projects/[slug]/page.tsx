@@ -8,8 +8,14 @@ import type { Locale } from "@/i18n/routing";
 import {
   getAllProjectsAllLocales,
   getProjectBySlug,
+  getTranslationPaths,
 } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/json-ld";
+import {
+  breadcrumbJsonLd,
+  softwareSourceCodeJsonLd,
+} from "@/lib/jsonld";
 import { formatDate } from "@/lib/utils";
 import { MDXContent } from "@/components/mdx-content";
 import { Prose } from "@/components/prose";
@@ -32,6 +38,7 @@ export async function generateMetadata(props: {
   return buildMetadata({
     locale,
     path: `/projects/${slug}`,
+    paths: await getTranslationPaths("projects", project.translationKey),
     title: project.title,
     description: project.description,
     type: "article",
@@ -50,8 +57,26 @@ export default async function ProjectPage(props: {
 
   const t = await getTranslations("Projects");
 
+  const breadcrumb = breadcrumbJsonLd(locale, [
+    { name: t("title"), path: "/projects" },
+    { name: project.title, path: `/projects/${slug}` },
+  ]);
+
   return (
     <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+      <JsonLd id="project-breadcrumb-jsonld" data={breadcrumb} />
+      {project.repo && (
+        <JsonLd
+          id="project-code-jsonld"
+          data={softwareSourceCodeJsonLd({
+            title: project.title,
+            description: project.description,
+            repo: project.repo,
+            url: project.url,
+            stack: project.stack,
+          })}
+        />
+      )}
       <Button asChild variant="ghost" size="sm" className="-ml-2 mb-8">
         <Link href="/projects">
           <ArrowLeft className="size-4" />

@@ -20,8 +20,13 @@ COPY . .
 # (used for SEO / sitemap / OG images).
 ARG NEXT_PUBLIC_API_URL=http://api:8080/api/v1
 ARG NEXT_PUBLIC_SITE_URL=https://example.com
+# Self-hosted Umami. Left empty the site simply ships no analytics script.
+ARG NEXT_PUBLIC_UMAMI_SRC=
+ARG NEXT_PUBLIC_UMAMI_WEBSITE_ID=
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL \
     NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL \
+    NEXT_PUBLIC_UMAMI_SRC=$NEXT_PUBLIC_UMAMI_SRC \
+    NEXT_PUBLIC_UMAMI_WEBSITE_ID=$NEXT_PUBLIC_UMAMI_WEBSITE_ID \
     NEXT_TELEMETRY_DISABLED=1
 RUN mkdir -p public && pnpm build
 

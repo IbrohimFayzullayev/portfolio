@@ -2,9 +2,9 @@ import type { Locale } from "@/i18n/routing";
 
 export const siteConfig = {
   name: "Ibrohim",
-  title: "Ibrohim — Software Engineer & Writer",
+  title: "Ibrohim — Full-stack Engineer",
   description:
-    "Portfolio and engineering blog of Ibrohim — building thoughtful, performant products with modern web technology.",
+    "Portfolio and engineering blog of Ibrohim — full-stack: TypeScript and Next.js on the front, Go and PostgreSQL behind it, shipped with Docker on a VPS I run myself.",
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(
     /\/$/,
     "",
@@ -21,7 +21,7 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/ibrohim-fayzullayev/",
   },
   // Used for default OG image alt / branding.
-  ogImageAlt: "Ibrohim — Software Engineer & Writer",
+  ogImageAlt: "Ibrohim — Full-stack Engineer",
 } as const;
 
 export type SiteConfig = typeof siteConfig;
