@@ -11,7 +11,8 @@
     "toggleTheme": "Mavzuni almashtirish",
     "switchLanguage": "Tilni almashtirish",
     "openMenu": "Menyuni ochish",
-    "closeMenu": "Menyuni yopish"
+    "closeMenu": "Menyuni yopish",
+    "uses": "Nima ishlataman"
   },
   "Home": {
     "heroBadge": "Ish uchun ochiqman",
@@ -58,6 +59,33 @@
     "stackFrontend": "Frontend",
     "stackBackend": "Backend",
     "stackInfra": "Infratuzilma"
+  },
+  "Uses": {
+    "title": "Nima ishlataman",
+    "subtitle": "Shu saytni ishga tushirib turgan narsalarning to‘liq ro‘yxati.",
+    "intro": "Bu orzudagi stack emas — ayni shu sahifani sizga yetkazayotgan uchta repozitoriyning haqiqiy tarkibi. Har bir qatorini shu saytning o‘zida tekshirib ko‘rsangiz bo‘ladi.",
+    "outro": "Ro‘yxat o‘zgarsa, avval shu sahifa yangilanadi.",
+    "server": "Server va deploy",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "quality": "Sifat va kuzatuv",
+    "usesServerVps": "Ubuntu 24.04, amd64 — bitta mashina, hammasi shu yerda",
+    "usesServerCompose": "Beshta servis bitta mashinada: sayt, admin, API, baza, proksi",
+    "usesServerCaddy": "Reverse proksi va Let’s Encrypt sertifikatlari — avtomatik",
+    "usesServerCI": "Har push’da image quriladi, testdan o‘tadi va SSH orqali chiqadi",
+    "usesBackendGo": "REST API — kompilyatsiya qilinadigan bitta binary, bog‘liqliksiz",
+    "usesBackendChi": "Yengil marshrutizator; hech qanday freymvork yo‘q",
+    "usesBackendPg": "Yagona ma’lumot manbai; tashqariga umuman chiqmaydi",
+    "usesBackendSqlc": "SQL’dan Go kodi generatsiya qiladi — ORM emas, so‘rovlar o‘zim yozgan",
+    "usesFrontendNext": "ISR bilan: kontent bazadan keladi, sahifalar statik qoladi",
+    "usesFrontendReact": "Server komponentlari birinchi o‘rinda",
+    "usesFrontendTailwind": "Dizayn tokenlari CSS o‘zgaruvchilarida",
+    "usesFrontendIntl": "uz va en — hreflang va translationKey bilan bog‘langan",
+    "usesFrontendMdx": "Post matni bazada MDX, kod bloklari server tomonda bo‘yaladi",
+    "usesQualityVitest": "Frontend birlik testlari; CI’da build’dan oldin ishlaydi",
+    "usesQualityGoTest": "Birlik va integratsiya testlari — haqiqiy PostgreSQL’ga qarshi",
+    "usesQualityUmami": "O‘z serverimda turgan analitika; uchinchi tomon skriptlari yo‘q",
+    "usesQualityBot": "Alohida konteynerdagi ops bot — holat, xabarnomalar, ogohlantirishlar"
   },
   "Footer": {
     "builtWith": "Next.js va Go — Docker va Caddy bilan o‘z serverimda joylashtirilgan.",

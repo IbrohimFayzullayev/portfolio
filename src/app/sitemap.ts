@@ -16,7 +16,7 @@ function withAlternates(path: string) {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const staticPaths = ["/", "/projects", "/blog", "/about"];
+  const staticPaths = ["/", "/projects", "/blog", "/about", "/uses"];
 
   const [allPosts, allProjects] = await Promise.all([
     getAllPostsAllLocales(),
@@ -40,6 +40,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/blog": newest(postDates),
     "/projects": newest(projectDates),
     "/about": undefined,
+    "/uses": undefined,
   };
 
   const staticEntries: MetadataRoute.Sitemap = staticPaths.map((path) => ({

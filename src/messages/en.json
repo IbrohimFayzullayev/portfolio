@@ -11,7 +11,8 @@
     "toggleTheme": "Toggle theme",
     "switchLanguage": "Switch language",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "uses": "Uses"
   },
   "Home": {
     "heroBadge": "Available for work",
@@ -58,6 +59,33 @@
     "stackFrontend": "Frontend",
     "stackBackend": "Backend",
     "stackInfra": "Infrastructure"
+  },
+  "Uses": {
+    "title": "Uses",
+    "subtitle": "Everything that actually runs this site.",
+    "intro": "Not an aspirational stack — the real contents of the three repositories delivering this page. You can check every line of it against the site you are reading it on.",
+    "outro": "When the list changes, this page changes first.",
+    "server": "Server and deploy",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "quality": "Quality and observability",
+    "usesServerVps": "Ubuntu 24.04, amd64 — one machine, everything on it",
+    "usesServerCompose": "Five services on one machine: site, admin, API, database, proxy",
+    "usesServerCaddy": "Reverse proxy and Let’s Encrypt certificates, automatically",
+    "usesServerCI": "Every push builds an image, runs the tests and ships over SSH",
+    "usesBackendGo": "The REST API — one compiled binary, no runtime dependencies",
+    "usesBackendChi": "A small router; no framework underneath it",
+    "usesBackendPg": "The single source of truth; never exposed to the internet",
+    "usesBackendSqlc": "Generates Go from SQL — not an ORM, I write the queries",
+    "usesFrontendNext": "With ISR: content comes from the database, pages stay static",
+    "usesFrontendReact": "Server components first",
+    "usesFrontendTailwind": "Design tokens as CSS variables",
+    "usesFrontendIntl": "uz and en, paired through hreflang and a translation key",
+    "usesFrontendMdx": "Post bodies are MDX in the database, highlighted on the server",
+    "usesQualityVitest": "Front-end unit tests; they run in CI before the build",
+    "usesQualityGoTest": "Unit and integration tests against a real PostgreSQL",
+    "usesQualityUmami": "Self-hosted analytics; no third-party scripts",
+    "usesQualityBot": "An ops bot in its own container — status, notifications, alerts"
   },
   "Footer": {
     "builtWith": "Next.js and Go, self-hosted on a VPS with Docker and Caddy.",
