@@ -12,7 +12,8 @@
     "switchLanguage": "Switch language",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "uses": "Uses"
+    "uses": "Uses",
+    "contact": "Contact"
   },
   "Home": {
     "heroBadge": "Available for work",
@@ -58,7 +59,8 @@
     "contactText": "I'm open to interesting projects and collaborations. Email, Telegram or a call — whichever suits you.",
     "stackFrontend": "Frontend",
     "stackBackend": "Backend",
-    "stackInfra": "Infrastructure"
+    "stackInfra": "Infrastructure",
+    "contactForm": "Write me a message"
   },
   "Uses": {
     "title": "Uses",
@@ -95,6 +97,33 @@
   "NotFound": {
     "title": "Page not found",
     "description": "The page you’re looking for doesn’t exist or has moved.",
+    "backHome": "Back home"
+  },
+  "Contact": {
+    "title": "Contact",
+    "subtitle": "A project, a role, or a question about something I wrote — write it here and it reaches me directly.",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "messagePlaceholder": "What are you working on, and where could I help?",
+    "send": "Send message",
+    "sending": "Sending…",
+    "sentTitle": "Message sent",
+    "sentText": "Thank you — it is in my inbox. I reply to the email address you gave, usually within a day or two.",
+    "sendAnother": "Send another",
+    "directTitle": "Or reach me directly",
+    "errorName": "Please enter your name.",
+    "errorEmail": "Please enter a valid email address, so I can reply.",
+    "errorMessageShort": "The message is too short — at least {min} characters.",
+    "errorMessageLong": "The message is too long — at most {max} characters.",
+    "errorInvalid": "Something in the form was not accepted. Please check the fields and try again.",
+    "errorRateLimit": "Too many messages from this connection. Please try again in an hour, or use email or Telegram below.",
+    "errorSend": "The message could not be sent. Please try again, or use email or Telegram below."
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "description": "This page failed to load. The error has been reported.",
+    "retry": "Try again",
     "backHome": "Back home"
   }
 }

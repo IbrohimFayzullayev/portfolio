@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Mail, Phone, Send } from "lucide-react";
+import { Mail, MessageSquare, Phone, Send } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import type { Locale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/config/site";
 import { buildMetadata } from "@/lib/seo";
 import { PageHeader } from "@/components/page-header";
@@ -88,6 +89,12 @@ export default async function AboutPage(props: {
         <p className="text-muted-foreground mt-3">{t("contactText")}</p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Button asChild>
+            <Link href="/contact">
+              <MessageSquare className="size-4" />
+              {t("contactForm")}
+            </Link>
+          </Button>
+          <Button asChild variant="outline">
             <a href={`mailto:${siteConfig.author.email}`}>
               <Mail className="size-4" />
               {siteConfig.author.email}
