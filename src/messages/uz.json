@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "homeTitle": "Full-stack dasturchi",
-    "homeDescription": "Portfolio va muhandislik blogi — interfeysdan serverga qadar: TypeScript, Next.js, Go, PostgreSQL, Docker."
+    "homeDescription": "Portfolio va muhandislik blogi - interfeysdan serverga qadar: TypeScript, Next.js, Go, PostgreSQL, Docker."
   },
   "Nav": {
     "home": "Bosh sahifa",
@@ -18,7 +18,7 @@
   "Home": {
     "heroBadge": "Ish uchun ochiqman",
     "heroTitle": "Men mahsulotni interfeysdan serverga qadar quraman.",
-    "heroSubtitle": "Full-stack dasturchiman: old tomonda TypeScript va Next.js, orqasida Go va PostgreSQL, chiqarish uchun Docker va GitHub Actions. Shu saytning o‘zi ham shunday qurilgan — uchta servis, o‘z serverimda.",
+    "heroSubtitle": "Full-stack dasturchiman: old tomonda TypeScript va Next.js, orqasida Go va PostgreSQL, chiqarish uchun Docker va GitHub Actions. Shu saytning o‘zi ham shunday qurilgan - uchta servis, o‘z serverimda.",
     "viewProjects": "Loyihalarni ko‘rish",
     "readBlog": "Blogni o‘qish",
     "featuredProjects": "Tanlangan loyihalar",
@@ -30,7 +30,7 @@
   },
   "Projects": {
     "title": "Loyihalar",
-    "subtitle": "Tanlangan ishlar — mahsulotlar, tajribalar va ochiq kod.",
+    "subtitle": "Tanlangan ishlar - mahsulotlar, tajribalar va ochiq kod.",
     "visitSite": "Saytga o‘tish",
     "viewSource": "Manba kodi",
     "stack": "Texnologiyalar",
@@ -52,11 +52,11 @@
   "About": {
     "title": "Men haqimda",
     "subtitle": "Men va ishlash uslubim haqida biroz batafsil.",
-    "p1": "Men to‘liq mahsulot quradigan dasturchiman — interfeysdan ma’lumotlar bazasi sxemasigacha va uni ishga tushiradigan serverga qadar. Amalda bu shuni anglatadi: Next.js’da interfeys, Go’da REST API, PostgreSQL’da sxema va migratsiyalar, hammasi Docker konteynerlarida GitHub Actions orqali chiqadi.",
-    "p2": "Shu saytning o‘zi ana shunga misol: uchta servis — ommaviy sayt, admin CMS va Go API — bitta VPS’da Caddy orqasida ishlaydi va har push’da avtomatik yangilanadi. Foydalanuvchi sezmaydigan, ammo doimo his qiladigan tafsilotlar men uchun muhim: tez yuklanish, bashorat qilinadigan xatti-harakat va keyingi odam — ko‘pincha kelajakdagi men — tushunadigan kod.",
+    "p1": "Men to‘liq mahsulot quradigan dasturchiman - interfeysdan ma’lumotlar bazasi sxemasigacha va uni ishga tushiradigan serverga qadar. Amalda bu shuni anglatadi: Next.js’da interfeys, Go’da REST API, PostgreSQL’da sxema va migratsiyalar, hammasi Docker konteynerlarida GitHub Actions orqali chiqadi.",
+    "p2": "Shu saytning o‘zi ana shunga misol: uchta servis - ommaviy sayt, admin CMS va Go API - bitta VPS’da Caddy orqasida ishlaydi va har push’da avtomatik yangilanadi. Foydalanuvchi sezmaydigan, ammo doimo his qiladigan tafsilotlar men uchun muhim: tez yuklanish, bashorat qilinadigan xatti-harakat va keyingi odam - ko‘pincha kelajakdagi men - tushunadigan kod.",
     "stackTitle": "Stack bo‘ylab qanday ishlayman",
     "contactTitle": "Bog‘lanish",
-    "contactText": "Qiziqarli loyiha va hamkorliklarga ochiqman. Pochta, Telegram yoki telefon — sizga qulayi orqali bog‘lanavering.",
+    "contactText": "Qiziqarli loyiha va hamkorliklarga ochiqman. Pochta, Telegram yoki telefon - sizga qulayi orqali bog‘lanavering.",
     "stackFrontend": "Frontend",
     "stackBackend": "Backend",
     "stackInfra": "Infratuzilma",
@@ -65,32 +65,32 @@
   "Uses": {
     "title": "Nima ishlataman",
     "subtitle": "Shu saytni ishga tushirib turgan narsalarning to‘liq ro‘yxati.",
-    "intro": "Bu orzudagi stack emas — ayni shu sahifani sizga yetkazayotgan uchta repozitoriyning haqiqiy tarkibi. Har bir qatorini shu saytning o‘zida tekshirib ko‘rsangiz bo‘ladi.",
+    "intro": "Bu orzudagi stack emas - ayni shu sahifani sizga yetkazayotgan uchta repozitoriyning haqiqiy tarkibi. Har bir qatorini shu saytning o‘zida tekshirib ko‘rsangiz bo‘ladi.",
     "outro": "Ro‘yxat o‘zgarsa, avval shu sahifa yangilanadi.",
     "server": "Server va deploy",
     "backend": "Backend",
     "frontend": "Frontend",
     "quality": "Sifat va kuzatuv",
-    "usesServerVps": "Ubuntu 24.04, amd64 — bitta mashina, hammasi shu yerda",
+    "usesServerVps": "Ubuntu 24.04, amd64 - bitta mashina, hammasi shu yerda",
     "usesServerCompose": "Beshta servis bitta mashinada: sayt, admin, API, baza, proksi",
-    "usesServerCaddy": "Reverse proksi va Let’s Encrypt sertifikatlari — avtomatik",
+    "usesServerCaddy": "Reverse proksi va Let’s Encrypt sertifikatlari - avtomatik",
     "usesServerCI": "Har push’da image quriladi, testdan o‘tadi va SSH orqali chiqadi",
-    "usesBackendGo": "REST API — kompilyatsiya qilinadigan bitta binary, bog‘liqliksiz",
+    "usesBackendGo": "REST API - kompilyatsiya qilinadigan bitta binary, bog‘liqliksiz",
     "usesBackendChi": "Yengil marshrutizator; hech qanday freymvork yo‘q",
     "usesBackendPg": "Yagona ma’lumot manbai; tashqariga umuman chiqmaydi",
-    "usesBackendSqlc": "SQL’dan Go kodi generatsiya qiladi — ORM emas, so‘rovlar o‘zim yozgan",
+    "usesBackendSqlc": "SQL’dan Go kodi generatsiya qiladi - ORM emas, so‘rovlar o‘zim yozgan",
     "usesFrontendNext": "ISR bilan: kontent bazadan keladi, sahifalar statik qoladi",
     "usesFrontendReact": "Server komponentlari birinchi o‘rinda",
     "usesFrontendTailwind": "Dizayn tokenlari CSS o‘zgaruvchilarida",
-    "usesFrontendIntl": "uz va en — hreflang va translationKey bilan bog‘langan",
+    "usesFrontendIntl": "uz va en - hreflang va translationKey bilan bog‘langan",
     "usesFrontendMdx": "Post matni bazada MDX, kod bloklari server tomonda bo‘yaladi",
     "usesQualityVitest": "Frontend birlik testlari; CI’da build’dan oldin ishlaydi",
-    "usesQualityGoTest": "Birlik va integratsiya testlari — haqiqiy PostgreSQL’ga qarshi",
+    "usesQualityGoTest": "Birlik va integratsiya testlari - haqiqiy PostgreSQL’ga qarshi",
     "usesQualityUmami": "O‘z serverimda turgan analitika; uchinchi tomon skriptlari yo‘q",
-    "usesQualityBot": "Alohida konteynerdagi ops bot — holat, xabarnomalar, ogohlantirishlar"
+    "usesQualityBot": "Alohida konteynerdagi ops bot - holat, xabarnomalar, ogohlantirishlar"
   },
   "Footer": {
-    "builtWith": "Next.js va Go — Docker va Caddy bilan o‘z serverimda joylashtirilgan.",
+    "builtWith": "Next.js va Go - Docker va Caddy bilan o‘z serverimda joylashtirilgan.",
     "rights": "Barcha huquqlar himoyalangan.",
     "rss": "RSS"
   },
@@ -101,7 +101,7 @@
   },
   "Contact": {
     "title": "Aloqa",
-    "subtitle": "Loyiha, ish taklifi yoki yozganlarim bo‘yicha savol — shu yerga yozing, xabar to‘g‘ridan-to‘g‘ri menga yetib keladi.",
+    "subtitle": "Loyiha, ish taklifi yoki yozganlarim bo‘yicha savol - shu yerga yozing, xabar to‘g‘ridan-to‘g‘ri menga yetib keladi.",
     "name": "Ism",
     "email": "Email",
     "message": "Xabar",
@@ -109,13 +109,13 @@
     "send": "Xabarni yuborish",
     "sending": "Yuborilmoqda…",
     "sentTitle": "Xabar yuborildi",
-    "sentText": "Rahmat — xabaringiz menga yetib keldi. Odatda bir-ikki kun ichida siz yozgan email manziliga javob beraman.",
+    "sentText": "Rahmat - xabaringiz menga yetib keldi. Odatda bir-ikki kun ichida siz yozgan email manziliga javob beraman.",
     "sendAnother": "Yana yozish",
     "directTitle": "Yoki to‘g‘ridan-to‘g‘ri bog‘laning",
     "errorName": "Ismingizni kiriting.",
     "errorEmail": "Javob yozishim uchun to‘g‘ri email manzil kiriting.",
-    "errorMessageShort": "Xabar juda qisqa — kamida {min} ta belgi kerak.",
-    "errorMessageLong": "Xabar juda uzun — ko‘pi bilan {max} ta belgi.",
+    "errorMessageShort": "Xabar juda qisqa - kamida {min} ta belgi kerak.",
+    "errorMessageLong": "Xabar juda uzun - ko‘pi bilan {max} ta belgi.",
     "errorInvalid": "Formadagi biror maydon qabul qilinmadi. Maydonlarni tekshirib, qayta urinib ko‘ring.",
     "errorRateLimit": "Bu ulanishdan juda ko‘p xabar yuborildi. Bir soatdan keyin urinib ko‘ring yoki pastdagi email yoki Telegram orqali yozing.",
     "errorSend": "Xabarni yuborib bo‘lmadi. Qayta urinib ko‘ring yoki pastdagi email yoki Telegram orqali yozing."

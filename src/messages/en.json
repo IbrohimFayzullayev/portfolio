@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "homeTitle": "Full-stack Engineer",
-    "homeDescription": "Portfolio and engineering blog — from interface to server: TypeScript, Next.js, Go, PostgreSQL, Docker."
+    "homeDescription": "Portfolio and engineering blog - from interface to server: TypeScript, Next.js, Go, PostgreSQL, Docker."
   },
   "Nav": {
     "home": "Home",
@@ -17,7 +17,7 @@
   },
   "Home": {
     "heroBadge": "Available for work",
-    "heroTitle": "I build the whole product — interface, API and the server it runs on.",
+    "heroTitle": "I build the whole product - interface, API and the server it runs on.",
     "heroSubtitle": "Full-stack engineer. TypeScript and Next.js on the front, Go and PostgreSQL behind it, Docker and GitHub Actions to ship it. This site is one of those builds: three services on a VPS I run myself.",
     "viewProjects": "View projects",
     "readBlog": "Read the blog",
@@ -30,7 +30,7 @@
   },
   "Projects": {
     "title": "Projects",
-    "subtitle": "Selected work — products, experiments and open source.",
+    "subtitle": "Selected work - products, experiments and open source.",
     "visitSite": "Visit site",
     "viewSource": "Source",
     "stack": "Stack",
@@ -52,11 +52,11 @@
   "About": {
     "title": "About",
     "subtitle": "A little more about me and how I work.",
-    "p1": "I build whole products — from the interface down to the database schema and the server that runs it. In practice that means a Next.js front end, a REST API in Go, schema and migrations in PostgreSQL, and the whole thing shipped as Docker containers through GitHub Actions.",
-    "p2": "This site is one of those builds: three services — the public site, an admin CMS and the Go API — running behind Caddy on a single VPS, redeployed on every push. I care about the details a visitor never notices but always feels: fast loads, predictable behaviour, and code the next person — usually future me — can follow.",
+    "p1": "I build whole products - from the interface down to the database schema and the server that runs it. In practice that means a Next.js front end, a REST API in Go, schema and migrations in PostgreSQL, and the whole thing shipped as Docker containers through GitHub Actions.",
+    "p2": "This site is one of those builds: three services - the public site, an admin CMS and the Go API - running behind Caddy on a single VPS, redeployed on every push. I care about the details a visitor never notices but always feels: fast loads, predictable behaviour, and code the next person - usually future me - can follow.",
     "stackTitle": "How I work across the stack",
     "contactTitle": "Get in touch",
-    "contactText": "I'm open to interesting projects and collaborations. Email, Telegram or a call — whichever suits you.",
+    "contactText": "I'm open to interesting projects and collaborations. Email, Telegram or a call - whichever suits you.",
     "stackFrontend": "Frontend",
     "stackBackend": "Backend",
     "stackInfra": "Infrastructure",
@@ -65,20 +65,20 @@
   "Uses": {
     "title": "Uses",
     "subtitle": "Everything that actually runs this site.",
-    "intro": "Not an aspirational stack — the real contents of the three repositories delivering this page. You can check every line of it against the site you are reading it on.",
+    "intro": "Not an aspirational stack - the real contents of the three repositories delivering this page. You can check every line of it against the site you are reading it on.",
     "outro": "When the list changes, this page changes first.",
     "server": "Server and deploy",
     "backend": "Backend",
     "frontend": "Frontend",
     "quality": "Quality and observability",
-    "usesServerVps": "Ubuntu 24.04, amd64 — one machine, everything on it",
+    "usesServerVps": "Ubuntu 24.04, amd64 - one machine, everything on it",
     "usesServerCompose": "Five services on one machine: site, admin, API, database, proxy",
     "usesServerCaddy": "Reverse proxy and Let’s Encrypt certificates, automatically",
     "usesServerCI": "Every push builds an image, runs the tests and ships over SSH",
-    "usesBackendGo": "The REST API — one compiled binary, no runtime dependencies",
+    "usesBackendGo": "The REST API - one compiled binary, no runtime dependencies",
     "usesBackendChi": "A small router; no framework underneath it",
     "usesBackendPg": "The single source of truth; never exposed to the internet",
-    "usesBackendSqlc": "Generates Go from SQL — not an ORM, I write the queries",
+    "usesBackendSqlc": "Generates Go from SQL - not an ORM, I write the queries",
     "usesFrontendNext": "With ISR: content comes from the database, pages stay static",
     "usesFrontendReact": "Server components first",
     "usesFrontendTailwind": "Design tokens as CSS variables",
@@ -87,7 +87,7 @@
     "usesQualityVitest": "Front-end unit tests; they run in CI before the build",
     "usesQualityGoTest": "Unit and integration tests against a real PostgreSQL",
     "usesQualityUmami": "Self-hosted analytics; no third-party scripts",
-    "usesQualityBot": "An ops bot in its own container — status, notifications, alerts"
+    "usesQualityBot": "An ops bot in its own container - status, notifications, alerts"
   },
   "Footer": {
     "builtWith": "Next.js and Go, self-hosted on a VPS with Docker and Caddy.",
@@ -101,7 +101,7 @@
   },
   "Contact": {
     "title": "Contact",
-    "subtitle": "A project, a role, or a question about something I wrote — write it here and it reaches me directly.",
+    "subtitle": "A project, a role, or a question about something I wrote - write it here and it reaches me directly.",
     "name": "Name",
     "email": "Email",
     "message": "Message",
@@ -109,13 +109,13 @@
     "send": "Send message",
     "sending": "Sending…",
     "sentTitle": "Message sent",
-    "sentText": "Thank you — it is in my inbox. I reply to the email address you gave, usually within a day or two.",
+    "sentText": "Thank you - it is in my inbox. I reply to the email address you gave, usually within a day or two.",
     "sendAnother": "Send another",
     "directTitle": "Or reach me directly",
     "errorName": "Please enter your name.",
     "errorEmail": "Please enter a valid email address, so I can reply.",
-    "errorMessageShort": "The message is too short — at least {min} characters.",
-    "errorMessageLong": "The message is too long — at most {max} characters.",
+    "errorMessageShort": "The message is too short - at least {min} characters.",
+    "errorMessageLong": "The message is too long - at most {max} characters.",
     "errorInvalid": "Something in the form was not accepted. Please check the fields and try again.",
     "errorRateLimit": "Too many messages from this connection. Please try again in an hour, or use email or Telegram below.",
     "errorSend": "The message could not be sent. Please try again, or use email or Telegram below."

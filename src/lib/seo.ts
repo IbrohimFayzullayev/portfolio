@@ -76,7 +76,7 @@ export function buildMetadata({
   image,
 }: BuildMetadataInput): Metadata {
   const computedTitle = title
-    ? `${title} — ${siteConfig.name}`
+    ? `${title} - ${siteConfig.name}`
     : siteConfig.title;
 
   const canonical = absoluteUrl(`/${locale}${path === "/" ? "" : path}`);
@@ -99,7 +99,7 @@ export function buildMetadata({
       // nobody.
       types: {
         "application/rss+xml": [
-          { url: absoluteUrl("/feed.xml"), title: `${siteConfig.name} — RSS` },
+          { url: absoluteUrl("/feed.xml"), title: `${siteConfig.name} - RSS` },
         ],
       },
     },
