@@ -147,6 +147,24 @@
   padding-block: 1rem;
   font-size: 0.875rem;
   line-height: 1.6;
+  /* The typography plugin colours <pre> text for the dark slab it draws
+     behind code. That slab is switched off here (keepBackground: false), so
+     without this the text is near-white on a near-white panel. */
+  color: var(--color-foreground);
+}
+
+/* rehype-pretty-code is given two themes, and with two themes it writes each
+   token's colours as custom properties (--shiki-light / --shiki-dark) rather
+   than as a colour. Something has to pick one; until these rules existed
+   nothing did, and every code block rendered in a single flat colour. A span
+   with no token colour (plain text, a `text` block) falls back to the <pre>
+   colour above. */
+[data-rehype-pretty-code-figure] code span {
+  color: var(--shiki-light, inherit);
+}
+
+.dark [data-rehype-pretty-code-figure] code span {
+  color: var(--shiki-dark, inherit);
 }
 
 [data-rehype-pretty-code-figure] code {

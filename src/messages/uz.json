@@ -12,7 +12,8 @@
     "switchLanguage": "Tilni almashtirish",
     "openMenu": "Menyuni ochish",
     "closeMenu": "Menyuni yopish",
-    "uses": "Nima ishlataman"
+    "uses": "Nima ishlataman",
+    "contact": "Aloqa"
   },
   "Home": {
     "heroBadge": "Ish uchun ochiqman",
@@ -58,7 +59,8 @@
     "contactText": "Qiziqarli loyiha va hamkorliklarga ochiqman. Pochta, Telegram yoki telefon — sizga qulayi orqali bog‘lanavering.",
     "stackFrontend": "Frontend",
     "stackBackend": "Backend",
-    "stackInfra": "Infratuzilma"
+    "stackInfra": "Infratuzilma",
+    "contactForm": "Xabar yozish"
   },
   "Uses": {
     "title": "Nima ishlataman",
@@ -95,6 +97,33 @@
   "NotFound": {
     "title": "Sahifa topilmadi",
     "description": "Siz qidirayotgan sahifa mavjud emas yoki ko‘chirilgan.",
+    "backHome": "Bosh sahifaga"
+  },
+  "Contact": {
+    "title": "Aloqa",
+    "subtitle": "Loyiha, ish taklifi yoki yozganlarim bo‘yicha savol — shu yerga yozing, xabar to‘g‘ridan-to‘g‘ri menga yetib keladi.",
+    "name": "Ism",
+    "email": "Email",
+    "message": "Xabar",
+    "messagePlaceholder": "Nima ustida ishlayapsiz va men qayerda yordam bera olaman?",
+    "send": "Xabarni yuborish",
+    "sending": "Yuborilmoqda…",
+    "sentTitle": "Xabar yuborildi",
+    "sentText": "Rahmat — xabaringiz menga yetib keldi. Odatda bir-ikki kun ichida siz yozgan email manziliga javob beraman.",
+    "sendAnother": "Yana yozish",
+    "directTitle": "Yoki to‘g‘ridan-to‘g‘ri bog‘laning",
+    "errorName": "Ismingizni kiriting.",
+    "errorEmail": "Javob yozishim uchun to‘g‘ri email manzil kiriting.",
+    "errorMessageShort": "Xabar juda qisqa — kamida {min} ta belgi kerak.",
+    "errorMessageLong": "Xabar juda uzun — ko‘pi bilan {max} ta belgi.",
+    "errorInvalid": "Formadagi biror maydon qabul qilinmadi. Maydonlarni tekshirib, qayta urinib ko‘ring.",
+    "errorRateLimit": "Bu ulanishdan juda ko‘p xabar yuborildi. Bir soatdan keyin urinib ko‘ring yoki pastdagi email yoki Telegram orqali yozing.",
+    "errorSend": "Xabarni yuborib bo‘lmadi. Qayta urinib ko‘ring yoki pastdagi email yoki Telegram orqali yozing."
+  },
+  "Error": {
+    "title": "Nimadir noto‘g‘ri ketdi",
+    "description": "Sahifa yuklanmadi. Xato haqida xabar yuborildi.",
+    "retry": "Qayta urinish",
     "backHome": "Bosh sahifaga"
   }
 }
